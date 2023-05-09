@@ -1,2 +1,1 @@
-# Task app made with react
-
+# Learning react basics
