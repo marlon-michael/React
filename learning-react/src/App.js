@@ -4,7 +4,7 @@ import Component from "./components/Component";
 
 
 function App() {
-  const [data,setData] = useState("nothing");
+  const [data,setData] = useState();
 
   const func = (data) => {
     setData(data)

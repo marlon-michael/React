@@ -3,8 +3,7 @@ import React, { useState } from "react";
 
 export default function Component(props){
     // const data = props.text
-    const [data,setData] = useState()
-    setData("data")
+    const data = "childData"
     props.func(data)
 
     return (
