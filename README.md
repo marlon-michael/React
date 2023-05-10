@@ -1,1 +1,1 @@
-# Learning react basics
+# Learnings and projects made with React

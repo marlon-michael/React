@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# BASICS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ ### creating component
+- create a file with ".js" extension
+- add these lines to file:
+	```javascript
+	import React from "react";
 
-## Available Scripts
+	export default function ComponentName(){
+	  return (
+	    <div>
+	      <h1>Hello Component</h1>
+	    </div>
+ 	  )
+	}
+	```
 
-In the project directory, you can run:
+- import component in main file:
+	```javascript 
+	import ComponentName from "./component/location/Component-file";
+	```
 
-### `npm start`
+- add the component such any other tag:
+	```javascript 
+	<ComponentName></ComponentName>
+	```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### passing data inside component
+- name your data parameter inside the parentheses, we usually name as "props"
+	```javascript
+	export default function ComponentName(props){
+		//code block
+	}
+	```
+- and then use your props inside braces
+	```javascript
+	  return (
+	    <div>
+	      <p> {props.propname} {props.id} </p>
+		  <p> {propname} {id} </p> // props can be used without the global parameter props
+	    </div>
+ 	  );
+	```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- add the component such any other tag:
+	```javascript
+	<ComponentName propname = "this is a prop" id = {1}></ComponentName>
+	```
 
-### `npm test`
+### passing data betwen parent and clild components
+#### (parent component)
+- use a set a const useState to store child data (need to be imported from react)
+	```javascript 
+	const [childData, setChildData] = useState()
+	```
+- create a function and pass it as a prop in child component
+	```javascript 
+	const func = (data) => { setData(data) }
+	``` 
+	```html
+	<Component func = {func}></Component>
+	```
+- rendering the childData
+	```javascript 
+	<h1>{childData}</h1>
+	``` 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### (parent component)
+- use the function passed by prop and pass the data you want outside the component
+	```javascript
+	const [data,setData] = useState()
+    setData("childData")
+    props.func(data)
+	``` 
+	
