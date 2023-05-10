@@ -73,3 +73,13 @@
     props.func(data)
 	``` 
 	
+### how to use useState (variables, arrays and objects)
+	```javascript 
+	const [text, setText] = useState("initial text")
+	const [array, setArray] = useState(["element 1", "element 2"])
+	const [thing, setThing] = useState({name: "person", age: 18})
+
+	setText("new text")
+	setArray(oldArray => [...oldArray, "new element"]) //add element tu array
+	setThing({...thing, name: "new name"})
+	```
