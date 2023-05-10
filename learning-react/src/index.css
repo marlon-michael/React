@@ -4,3 +4,18 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
+
+button{
+  background-color: rgb(134, 69, 195);
+  border-radius: 10px;
+  font-size: 20px;
+  border: 0;
+  padding: 10px;
+  transition: 1s;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: rgb(185, 146, 221);
+  transition: 1s;
+}
