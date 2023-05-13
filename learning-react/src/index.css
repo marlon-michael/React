@@ -8,31 +8,14 @@ body{
   color: white;
 }
 
-.header {
-  display: flex;
-  background-color: rgb(44, 51, 65);
-  height: 7vh;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.body {
-  display: flex;
-  margin: 20px;
-  padding: 0;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 input{
   box-sizing: border-box;
-  background-color: rgb(179, 191, 223);
-  border-radius: 5px;
+  background-color: rgb(22, 19, 38);
+  color: #767676;
+  border-radius: 3px;
   border: none;
+  box-shadow: none;
+  border-color: none;
 }
 
 input.todo-search{
@@ -60,12 +43,31 @@ button:hover{
   transition: .5s;
 }
 
+.header {
+  display: flex;
+  background-color: rgb(44, 51, 65);
+  height: 7vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.body {
+  min-height: 80%;
+  display: flex;
+  margin: 20px;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
 .todo-section{
   display: flex;
   background-color: rgb(44, 51, 65);
   width: 80vw;
-  height: 90%;
-  min-height: 300px;
   margin: 50px 2.5vw;
   padding: 20px 2.5vw;
   border-radius: 10px;
@@ -74,6 +76,7 @@ button:hover{
 }
 
 .todo{
+  min-height: 50vh;
   flex-direction: column;
 }
 .bottom{
@@ -115,7 +118,6 @@ button:hover{
   margin: 10px;
 }
 .task .state-field {
-  max-height: 3.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,7 +128,7 @@ button:hover{
   margin-left: 5px;
   width: 35px;
   height: 35px;
-  max-height: 3vh;
+  max-height: 30%;
   transition: 1s;
 }
 .task .DONE {
