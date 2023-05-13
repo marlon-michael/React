@@ -6,9 +6,7 @@ export default function Task(props){
     const [editmode, setEditmode] = useState(false)
     const [state, setState] = useState("UNDONE")
     const [task, setTask] = useState("new task"+props.id)
-
-    var t = 0;
-
+    
     const deleteTask = () => {
         props.functionDeleteTask(id)
     }
