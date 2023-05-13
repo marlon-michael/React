@@ -49,7 +49,11 @@
 
 ### passing data betwen parent and clild components
 #### (parent component)
-- use a set a const useState to store child data (need to be imported from react)
+- import useState from react
+	```javascript 
+	import {useState} from "react"
+	```
+- set a const useState to store child data
 	```javascript 
 	const [childData, setChildData] = useState()
 	```
@@ -61,7 +65,7 @@
 	<Component func = {func}></Component>
 	```
 - rendering the childData
-	```javascript 
+	```html 
 	<h1>{childData}</h1>
 	``` 
 
@@ -74,12 +78,26 @@
 	``` 
 	
 ### how to use useState (variables, arrays and objects)
-	```javascript 
-	const [text, setText] = useState("initial text")
-	const [array, setArray] = useState(["element 1", "element 2"])
-	const [thing, setThing] = useState({name: "person", age: 18})
+```javascript 
+const [text, setText] = useState("initial text")
+const [array, setArray] = useState(["element 1", "element 2"])
+const [thing, setThing] = useState({name: "person", age: 18})
 
-	setText("new text")
-	setArray(oldArray => [...oldArray, "new element"]) //add element tu array
-	setThing({...thing, name: "new name"})
+setText("new text")
+setArray(oldArray => [...oldArray, "new element"]) //add element tu array
+setThing({...thing, name: "new name"})
+```
+
+### how to use useEffect
+useEffect can be use to execute a given piece of code specified number of times
+- one single time using an empty array
+	```javascript
+	useEffect(()=>{
+		//code block
+	}, [])
 	```
+
+### text
+```javascript
+
+```
