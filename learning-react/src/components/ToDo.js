@@ -15,17 +15,13 @@ export default function ToDo(props){
     const addTask = () => {
         let id = nextTaskId()
         setTasks(lastTasks => [...lastTasks, 
-            <Task key={id} id={id} text={setEditing}
+            <Task key={id} id={id}
             functionEditTaskText={editTaskText}
             functionDeleteTask={deleteTask}></Task>])
     }
 
     const editText = (e) => {
         setText(e.target.value)
-    }
-
-    const setEditing = (txt) => {
-        setText(txt)
     }
 
     const editTaskText = (id) => {
@@ -47,7 +43,6 @@ export default function ToDo(props){
     
     return (
         <div className='todo-section'>
-            {text}
             <input onChange={editText} value={text} className='todo-search' placeholder='search your task here'></input>
             <div className="todo">
                 {tasks.map(task => task)}

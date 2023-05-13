@@ -65,22 +65,21 @@ button:hover{
   background-color: rgb(44, 51, 65);
   width: 80vw;
   height: 90%;
+  min-height: 300px;
   margin: 50px 2.5vw;
   padding: 20px 2.5vw;
-  min-height: 80vh;
   border-radius: 10px;
   align-items: center;
   flex-direction: column;
 }
 
 .todo{
-  min-height: 70vh;
-  display: flex;
   flex-direction: column;
 }
 .bottom{
   display: flex;
   align-self: flex-end;
+  margin-right: 6%;
 }
 
 .task{
@@ -95,15 +94,44 @@ button:hover{
   justify-content: start;
   text-align: center;
 }
-
 .task p{
-  width: 50%;
+  width: 80%;
+}
+.task .task-id{
+  width: 10%;
 }
 .task button{
   display: flex;
   margin-right: 10px;
-  height: 30px;
+  height: 70%;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+.task-input{
+  font-size: larger;
+  width: 80%;
+  height: 4vh;
+  margin: 10px;
+}
+.task .state-field {
+  max-height: 3.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.task .state-button {
+  display: flex;
+  margin-left: 5px;
+  width: 35px;
+  height: 35px;
+  max-height: 3vh;
+  transition: 1s;
+}
+.task .DONE {
+  background-color: rgb(18, 205, 143);
+}
+.task .UNDONE {
+  background-color: rgb(255, 47, 130);
 }
