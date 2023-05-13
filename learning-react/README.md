@@ -88,6 +88,14 @@ setArray(oldArray => [...oldArray, "new element"]) //add element tu array
 setThing({...thing, name: "new name"})
 ```
 
+### how to remove element from array useState
+```javascript 
+const [array, setArray] = useState(["element 1", "element 2"])
+
+let deletingElement = "element 2"
+setArray (old => old.filter((element) => element != deletingElement))
+```
+
 ### how to use useEffect
 useEffect can be use to execute a given piece of code specified number of times
 - one single time using an empty array
@@ -97,7 +105,19 @@ useEffect can be use to execute a given piece of code specified number of times
 	}, [])
 	```
 
+### getting text from an input
+```javascript
+const [text, setText] = useState("")
+const changeText = element => setTask(element.target.value)
+```
+
+```html
+<input onChange={changeText} value={text}></input>
+```
+
+
+
 ### text
 ```javascript
-
+	console.log()
 ```
