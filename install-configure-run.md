@@ -1,9 +1,14 @@
 pre-requisites: 
- - node.js
+- node.js
 
- creating a default application project with react
-- npx create-react-app name-of-project
+---
 
- running application
-- npm start
+- creating a default application project with react
+```console
+npx create-react-app name-of-project
+```
 
+- running application
+```console
+npm start
+```
