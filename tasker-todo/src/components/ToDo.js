@@ -25,12 +25,7 @@ export default function ToDo(props){
 
     const taskRenderer = () => {
         var tasksCopy = [...tasks]
-        tasksCopy = tasksCopy.filter((o) => o?.props?.task.text.indexOf(text) !== -1)
-
-        console.log("2---------------------", text)
-        tasksCopy.map((element)=>console.log(1,element?.props.task.text))
-        tasks.map((e)=>console.log(2,e?.props.task.text))
-
+        tasksCopy = tasksCopy.filter((element) => element?.props.task.text.indexOf(text) !== -1)
         return tasksCopy.map((task) => {return task})
     }
 
