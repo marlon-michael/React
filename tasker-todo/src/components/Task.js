@@ -4,9 +4,10 @@ import React, { useState } from "react";
 export default function Task(props){
     const [id] = useState(props.id)
     const [editmode, setEditmode] = useState(false)
-    const [state, setState] = useState("UNDONE")
+    const [state, setState] = useState(props.task.state ? props.task.state : "UNDONE")
     const [task, setTask] = useState(props.task.text)
     props.task.text = task
+    props.task.state = state
 
     const toggleEditmode = () => editmode ? setEditmode(false) : setEditmode(true)
     const changeState = () => state === "DONE"? setState("UNDONE") : setState("DONE");
