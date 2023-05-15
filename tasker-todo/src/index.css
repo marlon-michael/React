@@ -16,6 +16,7 @@ input{
   border: none;
   box-shadow: none;
   border-color: none;
+  text-align: center;
 }
 
 input.todo-search{
@@ -89,13 +90,10 @@ button:hover{
   display: flex;
   background-color: rgb(32, 36, 45);
   width: 74vw;
-  max-width: 74vw;
   height: 5vh;
   margin: 1.5vw;
   border-radius: 10px;
   align-items: center;
-  justify-content: start;
-  text-align: center;
 }
 .task p{
   width: 80%;
