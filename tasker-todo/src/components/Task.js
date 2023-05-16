@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 
 export default function Task(props){
@@ -8,21 +8,26 @@ export default function Task(props){
     const [task, setTask] = useState(props.task.text)
     props.task.text = task
     props.task.state = state
+    const editInput = useRef(null)
 
-    const toggleEditmode = () => editmode ? setEditmode(false) : setEditmode(true)
+    const toggleEditmode = () => editmode ? setEditmode(false): setEditmode(true)
     const changeState = () => state === "DONE"? setState("UNDONE") : setState("DONE");
     const deleteTask = () => props.functionDeleteTask(id)
     const updateText = (e) => setTask(e.target.value); props.task.text = task
+
+    useEffect(()=> editmode ? editInput.current.focus() : ()=>{}, [editmode])
 
     return (
         <div className="task">
             <div className="state-field"><button onClick={changeState} className={"state-button " + state}></button></div>
             {editmode? 
-                <input value={task} onChange={updateText} placeholder="new task" className="task-input"></input>:
-                task.length > 0 ? <p>{task}</p> : <p>new task</p>   
+                <input ref={editInput} value={task} onChange={updateText} className="task-input"></input>:
+                task.length > 0 ? <p>{task}</p> : <p>do something</p>   
             }
-            <button onClick={toggleEditmode}>{editmode? <div>save</div> : <div>edit</div>}</button>
-            <button onClick={deleteTask}>delete</button>
+            <div className="button-field">
+                <button onClick={toggleEditmode}>{editmode? <div>save</div> : <div>edit</div>}</button>
+                <button onClick={deleteTask}>delete</button>
+            </div>
         </div>
     );
 }
