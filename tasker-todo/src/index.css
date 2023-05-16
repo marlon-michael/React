@@ -1,3 +1,21 @@
+@media (min-width:700px) {
+  *{
+    font-size: large;
+  }
+}
+@media (max-width:700px), (max-height:700px) {
+  *{
+    font-size: small;
+  }
+  .task button{
+    font-size: xx-small;
+  }
+}
+
+h3{
+  font-size: larger;
+}
+
 body{
   margin: 0;padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,7 +30,7 @@ input{
   box-sizing: border-box;
   background-color: rgb(22, 19, 38);
   color: #767676;
-  border-radius: 3px;
+  border-radius: 10px;
   border: none;
   box-shadow: none;
   border-color: none;
@@ -20,18 +38,16 @@ input{
 }
 
 input.todo-search{
-  width: 70vw;
+  width: 80%;
   height: 5vh;
   margin-top: .1vh;
   margin-bottom: 1vh;
-  font-size: larger;
 }
 
 button{
   background-color: rgb(69, 88, 195);
   color: whitesmoke;
   border-radius: 5px;
-  font-size: 20px;
   border: none;
   padding: 10px;
   transition: .5s;
@@ -61,22 +77,22 @@ button:hover{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .todo-section{
   display: flex;
   background-color: rgb(44, 51, 65);
-  width: 80vw;
+  width: 80%;
   margin: 50px 2.5vw;
   padding: 20px 2.5vw;
-  border-radius: 10px;
+  border-radius: 15px;
   align-items: center;
   flex-direction: column;
 }
 
 .todo{
+  width: 100%;
   min-height: 50vh;
   flex-direction: column;
 }
@@ -89,45 +105,48 @@ button:hover{
 .task{
   display: flex;
   background-color: rgb(32, 36, 45);
-  width: 74vw;
-  height: 5vh;
-  margin: 1.5vw;
+  width: 100%;
+  margin: 1%;
   border-radius: 10px;
   align-items: center;
 }
-.task p{
-  width: 80%;
-}
-.task .task-id{
-  width: 10%;
-}
-.task button{
-  display: flex;
-  margin-right: 10px;
-  height: 70%;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
 .task-input{
-  font-size: larger;
   width: 80%;
   height: 4vh;
   margin: 10px;
 }
-.task .state-field {
+.task p{
+  width: 69%;
+  margin: 1% 10px;
+}
+.task .button-field{
+  max-height: 3vh;
   display: flex;
+  justify-content: flex-end;
+  width: 26%;
+}
+.task button{
+  max-width: 45%;
+  display: flex;
+  margin-right: 5%;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+.task .state-field {
+  width: 10%;
+  display: flex;
+  justify-content: flex-start;
 }
 .task .state-button {
   display: flex;
   margin-left: 5px;
   width: 35px;
   height: 35px;
-  max-height: 30%;
+  max-width: 2vh;
+  max-height: 2vh;
   transition: 1s;
+  border-radius: 99px;
 }
 .task .DONE {
   background-color: rgb(18, 205, 143);
