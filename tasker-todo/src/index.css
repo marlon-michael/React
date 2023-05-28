@@ -1,19 +1,26 @@
-@media (min-width:700px) {
-  *{
-    font-size: large;
-  }
-}
+
 @media (max-width:700px), (max-height:700px) {
-  *{
+  .todo-section *{
     font-size: small;
   }
-  .task button{
+  .task-button{
+    max-height: 2vh;
     font-size: xx-small;
   }
 }
-
-h3{
-  font-size: larger;
+@media (min-width:700px) {
+  .todo-section *{
+    font-size: large;
+  }
+}
+@media (min-width:2000px), (min-height:2000px) {
+  .todo-section *{
+    font-size: xx-large;
+  }
+  .task-button{
+    max-height: 2vh;
+    font-size: xx-large;
+  }
 }
 
 body{
@@ -35,13 +42,6 @@ input{
   box-shadow: none;
   border-color: none;
   text-align: center;
-}
-
-input.todo-search{
-  width: 80%;
-  height: 5vh;
-  margin-top: .1vh;
-  margin-bottom: 1vh;
 }
 
 button{
@@ -80,6 +80,12 @@ button:hover{
   color: white;
 }
 
+.bottom{
+  display: flex;
+  align-self: flex-end;
+  margin-right: 6%;
+}
+
 .todo-section{
   display: flex;
   background-color: rgb(44, 51, 65);
@@ -90,16 +96,16 @@ button:hover{
   align-items: center;
   flex-direction: column;
 }
-
 .todo{
   width: 100%;
   min-height: 50vh;
   flex-direction: column;
 }
-.bottom{
-  display: flex;
-  align-self: flex-end;
-  margin-right: 6%;
+.todo-search{
+  width: 80%;
+  height: 5vh;
+  margin-top: .1vh;
+  margin-bottom: 1vh;
 }
 
 .task{
@@ -115,17 +121,17 @@ button:hover{
   height: 4vh;
   margin: 10px;
 }
-.task p{
+.task-title{
   width: 69%;
   margin: 1% 10px;
 }
-.task .button-field{
+.button-field{
   max-height: 3vh;
   display: flex;
   justify-content: flex-end;
   width: 26%;
 }
-.task button{
+.task-button{
   max-width: 45%;
   display: flex;
   margin-right: 5%;
@@ -133,18 +139,18 @@ button:hover{
   justify-content: center;
   text-align: center;
 }
-.task .state-field {
+.state-field {
   width: 10%;
   display: flex;
   justify-content: flex-start;
 }
-.task .state-button {
+.state-button {
   display: flex;
   margin-left: 5px;
-  width: 35px;
-  height: 35px;
-  max-width: 2vh;
-  max-height: 2vh;
+  width: 50px;
+  height: 50px;
+  max-width: 2.5vh;
+  max-height: 2.5vh;
   transition: 1s;
   border-radius: 99px;
 }
